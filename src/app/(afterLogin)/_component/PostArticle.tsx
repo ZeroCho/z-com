@@ -1,6 +1,6 @@
 "use client";
 
-import {ReactNode} from "react";
+import {EventHandler, MouseEventHandler, ReactNode} from "react";
 import style from './post.module.css';
 import {useRouter} from "next/navigation";
 
@@ -26,7 +26,7 @@ export default function PostArticle({ children, post}: Props) {
   }
 
   return (
-    <article onClickCapture={onClick} className={style.post}>
+    <article onClick={onClick} className={style.post}>
       {children}
     </article>
   );
