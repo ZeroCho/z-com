@@ -5,7 +5,7 @@ import onSubmit from '../_lib/signup';
 import BackButton from "@/app/(beforeLogin)/_component/BackButton";
 import { useFormState, useFormStatus } from 'react-dom';
 
-function showMessage(message: string) {
+function showMessage(message: string | null) {
   console.log('message', message);
   if (message === 'no_id') {
     return '아이디를 입력하세요.';
