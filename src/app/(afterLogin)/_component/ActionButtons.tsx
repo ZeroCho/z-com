@@ -222,8 +222,28 @@ export default function ActionButtons({ white, post }: Props) {
     },
   })
 
-  const onClickComment = () => {}
-  const onClickRepost = () => {}
+  const onClickComment: MouseEventHandler<HTMLButtonElement> = (e) => {
+    e.stopPropagation();
+    const formData = new FormData();
+    formData.append('content', '답글 테스트');
+    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/posts/${post.postId}/comments`, {
+      method: 'post',
+      credentials: 'include',
+      body: formData
+    });
+  }
+  const onClickRepost: MouseEventHandler<HTMLButtonElement> = (e) => {
+    e.stopPropagation();
+    if (!reposted) {
+      const formData = new FormData();
+      formData.append('content', '재게시 테스트');
+      fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/posts/${post.postId}/reposts`, {
+        method: 'post',
+        credentials: 'include',
+        body: formData
+      });
+    }
+  }
   const onClickHeart: MouseEventHandler<HTMLButtonElement> = (e) => {
     e.stopPropagation();
     if (liked) {
@@ -244,7 +264,7 @@ export default function ActionButtons({ white, post }: Props) {
             </g>
           </svg>
         </button>
-        <div className={style.count}>{post._count.Comments || ''}</div>
+        <div className={style.count}>{post._count?.Comments || ''}</div>
       </div>
       <div className={cx(style.repostButton, reposted && style.reposted, white && style.white)}>
         <button onClick={onClickRepost}>
@@ -255,7 +275,7 @@ export default function ActionButtons({ white, post }: Props) {
             </g>
           </svg>
         </button>
-        <div className={style.count}>{post._count.Reposts || ''}</div>
+        <div className={style.count}>{post._count?.Reposts || ''}</div>
       </div>
       <div className={cx([style.heartButton, liked && style.liked, white && style.white])}>
         <button onClick={onClickHeart}>
@@ -266,7 +286,7 @@ export default function ActionButtons({ white, post }: Props) {
             </g>
           </svg>
         </button>
-        <div className={style.count}>{post._count.Hearts || ''}</div>
+        <div className={style.count}>{post._count?.Hearts || ''}</div>
       </div>
     </div>
   )

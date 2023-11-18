@@ -6,6 +6,12 @@ import {dehydrate, HydrationBoundary, QueryClient} from "@tanstack/react-query";
 import {getPostRecommends} from "@/app/(afterLogin)/home/_lib/getPostRecommends";
 import TabDecider from "@/app/(afterLogin)/home/_component/TabDecider";
 import {auth} from "@/auth";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+  title: '홈 / Z',
+  description: '홈',
+}
 
 export default async function Home() {
   const session = await auth();

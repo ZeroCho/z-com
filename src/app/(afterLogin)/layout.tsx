@@ -32,7 +32,7 @@ export default async function AfterLoginLayout({children, modal}: Props) {
                   </ul>
                   <Link href="/compose/tweet" className={style.postButton}>
                     <span>게시하기</span>
-                    <svg viewBox="0 0 24 24" aria-hidden="true"
+                    <svg viewBox="0 0 24 24" width={24} aria-hidden="true"
                          className="r-jwli3a r-4qtqp9 r-yyyyoo r-1472mwg r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-lrsllp">
                       <g>
                         <path
