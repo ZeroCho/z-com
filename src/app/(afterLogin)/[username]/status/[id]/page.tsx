@@ -12,31 +12,34 @@ import {getSinglePostServer} from "@/app/(afterLogin)/[username]/status/[id]/_li
 import {getUserServer} from "@/app/(afterLogin)/[username]/_lib/getUserServer";
 
 export async function generateMetadata({params}: Props) {
-  const user: User = await getUserServer({ queryKey: ["users", params.username] });
-  const post: Post = await getSinglePostServer({ queryKey: ["posts", params.id] });
+  const user: User = await getUserServer({queryKey: ["users", params.username]});
+  const post: Post = await getSinglePostServer({queryKey: ["posts", params.id]});
   return {
     title: `Z에서 ${user.nickname} 님 : ${post.content}`,
     description: post.content,
     openGraph: {
       title: `Z에서 ${user.nickname} 님 : ${post.content}`,
       description: post.content,
-      images: (!post.Images || post.Images.length === 0) ? [
+      images: post.Images?.map((v) => ({
+        url: `https://z.nodebird.com${v.link}`,
+        width: 600,
+        height: 400,
+      })) || [
         {
           url: `https://z.nodebird.com${user.image}`,
           width: 400,
           height: 400,
         },
-      ] : [{
-        url: `https://z.nodebird.com${post.Images[0].link}`,
-        width: 800,
-        height: 600,
-      }]
+      ],
     }
   }
 }
 
 type Props = {
-  params: { id: string, username: string }
+  params: {
+    id: string,
+    username: string
+  }
 }
 export default async function Page({params}: Props) {
   const {id} = params;
@@ -55,7 +58,7 @@ export default async function Page({params}: Props) {
         <SinglePost id={id}/>
         <CommentForm id={id}/>
         <div>
-          <Comments id={id} />
+          <Comments id={id}/>
         </div>
       </HydrationBoundary>
     </div>
