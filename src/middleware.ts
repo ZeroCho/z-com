@@ -4,7 +4,7 @@ import {NextResponse} from "next/server";
 export async function middleware() {
   const session = await auth();
   if (!session) {
-    return NextResponse.redirect('http://localhost:80/i/flow/login');
+    return NextResponse.redirect('https://z.nodebird.com/i/flow/login');
   }
 }
 
