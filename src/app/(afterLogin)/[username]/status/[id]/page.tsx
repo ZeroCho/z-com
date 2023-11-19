@@ -20,7 +20,7 @@ export async function generateMetadata({params}: Props) {
     openGraph: {
       title: `Z에서 ${user.nickname} 님 : ${post.content}`,
       description: post.content,
-      images: post.Images?.length === 0 ? [
+      images: (!post.Images || post.Images.length === 0) ? [
         {
           url: `https://z.nodebird.com${user.image}`,
           width: 400,
