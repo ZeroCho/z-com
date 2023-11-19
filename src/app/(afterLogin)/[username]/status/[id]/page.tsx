@@ -27,7 +27,7 @@ export default async function Page({params}: Props) {
   const {id} = params;
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({queryKey: ['posts', id], queryFn: getSinglePostServer})
-  await queryClient.prefetchQuery({queryKey: ['posts', id, 'comments'], queryFn: getComments})
+  // await queryClient.prefetchQuery({queryKey: ['posts', id, 'comments'], queryFn: getComments})
   const dehydratedState = dehydrate(queryClient)
 
   return (

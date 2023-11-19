@@ -56,6 +56,9 @@ export default function PostForm({ me }: Props) {
           return shallow;
         })
       }
+      await queryClient.invalidateQueries({
+        queryKey: ["trends"]
+      })
     },
     onError(error) {
       console.error(error);

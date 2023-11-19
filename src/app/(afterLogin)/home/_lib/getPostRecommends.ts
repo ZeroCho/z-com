@@ -4,6 +4,7 @@ export async function getPostRecommends({pageParam}: Props) {
     next: {
       tags: ['posts', 'recommends'],
     },
+    cache: 'no-store',
   });
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
