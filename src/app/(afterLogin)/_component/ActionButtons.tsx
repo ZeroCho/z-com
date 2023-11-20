@@ -5,6 +5,8 @@ import {MouseEventHandler} from "react";
 import {InfiniteData, useMutation, useQueryClient} from "@tanstack/react-query";
 import {Post} from "@/model/Post";
 import {useSession} from "next-auth/react";
+import {useRouter} from "next/navigation";
+import { useModalStore } from "@/store/modal";
 
 type Props = {
   white?: boolean,
@@ -13,7 +15,9 @@ type Props = {
 export default function ActionButtons({ white, post }: Props) {
   const queryClient = useQueryClient();
   const { data: session }  = useSession();
-  const commented = !!post.Comments?.find((v) => v.userId === session?.user?.email);
+  const router = useRouter();
+  const modalStore = useModalStore();
+
   const reposted = !!post.Reposts?.find((v) => v.userId === session?.user?.email);
   const liked = !!post.Hearts?.find((v) => v.userId === session?.user?.email);
   const { postId } = post;
@@ -340,15 +344,11 @@ export default function ActionButtons({ white, post }: Props) {
 
   const onClickComment: MouseEventHandler<HTMLButtonElement> = (e) => {
     e.stopPropagation();
-    alert('직접 구현해보세요!');
-    // const formData = new FormData();
-    // formData.append('content', '답글 테스트');
-    // fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/posts/${post.postId}/comments`, {
-    //   method: 'post',
-    //   credentials: 'include',
-    //   body: formData
-    // });
+    modalStore.setMode('comment');
+    modalStore.setData(post);
+    router.push('/compose/tweet');
   }
+
   const onClickRepost: MouseEventHandler<HTMLButtonElement> = (e) => {
     e.stopPropagation();
     if (!reposted) {
