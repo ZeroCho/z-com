@@ -17,7 +17,7 @@ export default function PostRecommends() {
     queryKey: ['posts', 'recommends'],
     queryFn: getPostRecommends,
     initialPageParam: 0,
-    getNextPageParam: (lastPage) => lastPage.at(-1)?.postId,
+    getNextPageParam: (lastPage) => lastPage?.at(-1)?.postId,
     staleTime: 60 * 1000, // fresh -> stale, 5분이라는 기준
     gcTime: 300 * 1000,
   })
