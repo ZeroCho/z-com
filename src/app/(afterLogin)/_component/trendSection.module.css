@@ -3,6 +3,12 @@
     border-radius: 16px;
     margin-top: 12px;
 }
+@media (prefers-color-scheme: dark) {
+    .trendBg {
+        background-color: rgb(22, 24, 28);
+        color: white;
+    }
+}
 .trend {
     padding: 12px 0;
 }

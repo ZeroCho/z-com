@@ -9,6 +9,11 @@
     flex-direction: column;
     align-items: stretch;
 }
+@media (prefers-color-scheme: dark) {
+    .main {
+        border-color: rgb(47, 51, 54);
+    }
+}
 
 .header {
     display: flex;
@@ -96,7 +101,7 @@
 .backButton {
     width: 34px;
     height: 34px;
-    background-color: #fff;
+    background-color: rgb(var(--background-end-rgb));
     border: none;
     border-radius: 17px;
     display: flex;
@@ -106,4 +111,9 @@
 }
 .backButton:hover {
     background-color: rgba(15, 20, 25, 0.1);
+}
+@media (prefers-color-scheme: dark) {
+    .backButton svg {
+        fill: white;
+    }
 }
