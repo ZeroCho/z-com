@@ -11,8 +11,14 @@
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.4);
 }
+@media (prefers-color-scheme: dark) {
+    .modalBackground {
+        background-color: rgba(91, 112, 131, 0.4);
+    }
+}
+
 .modal {
-    background: #ffffff;
+    background: rgb(var(--background-end-rgb));;
     position: relative;
     top: 5%;
     max-width: 80vw;
@@ -40,7 +46,14 @@
 .closeButton:hover {
     background-color: rgba(15,20,25, 0.1);
 }
-
+@media (prefers-color-scheme: dark) {
+    .closeButton {
+        background-color: black;
+    }
+    .closeButton svg {
+        fill: white;
+    }
+}
 .modalForm {
     display: flex;
     flex-direction: column;
@@ -89,6 +102,7 @@
     border: none;
     outline: none;
     font-size: 20px;
+    background: transparent;
 }
 .input::placeholder {
     font-family: 'Malgun Gothic', sans-serif;
@@ -101,6 +115,11 @@
 .modalDivider {
     width: 100%;
     border-bottom: 1px solid rgb(239, 243, 244);
+}
+@media (prefers-color-scheme: dark) {
+    .modalDivider {
+        border-color: rgb(47, 51, 54);
+    }
 }
 .footerButtons {
     display: flex;

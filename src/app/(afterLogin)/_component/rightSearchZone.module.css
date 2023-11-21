@@ -42,14 +42,26 @@
     border: 1px solid rgb(239,243,244);
     margin-top: 12px;
 }
-
+@media (prefers-color-scheme: dark) {
+    .filterTitle {
+        background: black;
+        border-color: rgb(47, 51, 54);
+        color: white;
+    }
+}
 .filterSection {
     padding: 0 16px 12px;
     margin-bottom: 16px;
     border-radius: 16px;
     border: 1px solid rgb(239,243,244);
 }
-
+@media (prefers-color-scheme: dark) {
+    .filterSection {
+        background: black;
+        border-color: rgb(47, 51, 54);
+        color: white;
+    }
+}
 .filterSection label {
     font-size: 15px;
     font-weight: bold;

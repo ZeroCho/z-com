@@ -21,3 +21,8 @@
         display: inline-block;
     }
 }
+@media (prefers-color-scheme: dark) {
+    .navPill svg {
+        fill: white;
+    }
+}

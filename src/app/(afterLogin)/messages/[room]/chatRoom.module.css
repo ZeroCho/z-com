@@ -11,7 +11,11 @@
     align-items: stretch;
     padding: 0 16px;
 }
-
+@media (prefers-color-scheme: dark) {
+    .main {
+        border-color: rgb(47, 51, 54);
+    }
+}
 .header {
     height: 54px;
     display: flex;
@@ -28,10 +32,14 @@
     flex-direction: column;
     transition-property: background-color;
     transition-duration: 0.2s;
-    border-color: rgb(239, 243, 244);
     cursor: pointer;
     border-bottom: 1px solid rgb(239, 243, 244);
     margin-bottom: 20px;
+}
+@media (prefers-color-scheme: dark) {
+    .userInfo {
+        border-color: rgb(47, 51, 54);
+    }
 }
 .userInfo:hover {
     background-color: rgba(0, 0, 0, 0.03);

@@ -10,6 +10,11 @@
     flex-direction: column;
     align-items: stretch;
 }
+@media (prefers-color-scheme: dark) {
+    .main {
+        border-color: rgb(47, 51, 54);
+    }
+}
 
 .header {
     height: 53px;
@@ -51,5 +56,5 @@
 
 }
 .roomChatInfo b {
-    color: black;
+    color: rgb(var(--foreground-rgb));
 }

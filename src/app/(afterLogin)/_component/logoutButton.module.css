@@ -7,7 +7,7 @@
     cursor: pointer;
     border: none;
     align-items: center;
-    background-color: #fff;
+    background-color: rgb(var(--background-end-rgb));
     text-align: left;
 }
 .logOutUserName {
