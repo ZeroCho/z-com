@@ -22,6 +22,7 @@
     padding: 12px;
     margin-left: 5px;
     font-size: 15px;
+    width: 100%;
 }
 @media (prefers-color-scheme: dark) {
     .search {

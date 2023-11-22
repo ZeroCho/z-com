@@ -1,15 +1,19 @@
 "use client";
 
 import style from "@/app/(afterLogin)/_component/rightSearchZone.module.css";
-import {useRouter} from "next/navigation";
+import {useRouter, useSearchParams} from "next/navigation";
 import {FormEventHandler} from "react";
 
 type Props = { q?: string }
 export default function SearchForm({ q }: Props) {
   const router = useRouter();
+  const searchParams = useSearchParams();
+
   const onSubmit: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    router.push(`/search?q=${event.currentTarget.search.value}`);
+    const newSearchParams = new URLSearchParams(searchParams);
+    newSearchParams.set('q', event.currentTarget.search.value);
+    router.push(`/search?${newSearchParams.toString()}`);
   }
 
   return (
