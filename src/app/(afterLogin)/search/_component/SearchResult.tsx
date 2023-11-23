@@ -39,7 +39,7 @@ export default function SearchResult({ searchParams }: Props) {
 
   return (
     <>
-      {data?.pages.map((page, i) => (
+      {data?.pages?.map((page, i) => (
         <Fragment key={i}>
           {page.map((post) => <Post key={post.postId} post={post}/>)}
         </Fragment>))}

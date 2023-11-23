@@ -234,6 +234,10 @@ export default function ActionButtons({ white, post }: Props) {
       });
     },
     async onSuccess(response) {
+      console.log('success');
+      if (!response.ok) {
+        return;
+      }
       const data = await response.json() as Post;
       const queryCache = queryClient.getQueryCache()
       const queryKeys = queryCache.getAll().map(cache => cache.queryKey)
@@ -289,7 +293,10 @@ export default function ActionButtons({ white, post }: Props) {
         credentials: 'include',
       })
     },
-    onSuccess() {
+    onSuccess(response) {
+      if (!response.ok) {
+        return;
+      }
       const queryCache = queryClient.getQueryCache()
       const queryKeys = queryCache.getAll().map(cache => cache.queryKey)
       console.log('queryKeys', queryKeys);
