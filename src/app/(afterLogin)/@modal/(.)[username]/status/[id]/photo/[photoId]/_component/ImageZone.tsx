@@ -1,6 +1,6 @@
 "use client"
 
-import style from "@/app/(afterLogin)/@modal/[username]/status/[id]/photo/[photoId]/photoModal.module.css";
+import style from "../photoModal.module.css";
 import ActionButtons from "@/app/(afterLogin)/_component/ActionButtons";
 import React from "react";
 import {useQuery} from "@tanstack/react-query";
