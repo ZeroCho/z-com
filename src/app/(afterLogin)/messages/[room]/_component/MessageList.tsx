@@ -43,13 +43,15 @@ export default function MessageList({id}: Props) {
   useEffect(() => {
     if (inView) {
       if (!isFetching && hasPreviousPage && !adjustingScroll) {
-        const prevHeight = listRef.current.scrollHeight;
+        const prevHeight = listRef.current?.scrollHeight || 0;
         fetchPreviousPage()
           .then(() => {
             setAdjustingScroll(true);
             setTimeout(() => {
-              console.log('prevHeight', prevHeight, listRef.current.scrollHeight);
-              listRef.current.scrollTop = listRef.current.scrollHeight - prevHeight;
+              console.log('prevHeight', prevHeight, listRef.current?.scrollHeight);
+              if (listRef.current) {
+                listRef.current.scrollTop = listRef.current?.scrollHeight - prevHeight;
+              }
               setAdjustingScroll(false);
             }, 0);
           });
