@@ -24,6 +24,14 @@
     flex: 1;
     outline: none;
 }
+@media (prefers-color-scheme: dark) {
+    .form {
+        background: rgb(32, 35, 39);
+    }
+    .form textarea {
+        color: white;
+    }
+}
 .submitButton {
     cursor: pointer;
     border: none;
@@ -32,6 +40,7 @@
     justify-content: center;
     width: 34px;
     height: 34px;
+    background: transparent;
 }
 .submitButton:disabled {
     opacity: 0.5;

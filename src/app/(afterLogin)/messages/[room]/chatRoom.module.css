@@ -78,6 +78,18 @@
     color: #536471;
     font-size: 13px;
 }
+@media (prefers-color-scheme: dark) {
+    .userInfo {
+        border-color: rgb(47, 51, 54);
+    }
+    .yourMessage .content {
+        background: rgb(47, 51, 54);
+        color: white;
+    }
+    .date {
+        color: rgb(113, 118, 123);
+    }
+}
 .list {
     flex: 1;
     padding: 0 16px;

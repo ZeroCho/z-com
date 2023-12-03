@@ -53,3 +53,23 @@
 .roomChatInfo b {
     color: black;
 }
+@media (prefers-color-scheme: dark) {
+    .main {
+        border-color: rgb(47, 51, 54);
+    }
+    .room {
+        border-color: rgb(47, 51, 54);
+    }
+    .room:hover {
+        background: rgb(29,155,240,0.1);
+    }
+    .roomChatInfo {
+        color: rgb(231, 233, 234);
+    }
+    .roomChatInfo .roomUserInfo span {
+        color: rgb(113, 118, 123);
+    }
+    .roomChatInfo b {
+        color: white;
+    }
+}
