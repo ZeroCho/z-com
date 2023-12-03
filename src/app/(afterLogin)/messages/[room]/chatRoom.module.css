@@ -79,6 +79,9 @@
     font-size: 13px;
 }
 @media (prefers-color-scheme: dark) {
+    .main {
+        border-color: rgb(47, 51, 54);
+    }
     .userInfo {
         border-color: rgb(47, 51, 54);
     }

@@ -1,10 +1,11 @@
 .formZone {
-    border-top: 1px solid rgba(239,243,244,1.00);
+    border-top: 1px solid rgba(239, 243, 244, 1.00);
     height: 56px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .form {
     background: rgb(239, 243, 244);
     margin: 4px 12px;
@@ -15,6 +16,7 @@
     width: 100%;
     align-items: center;
 }
+
 .form textarea {
     width: 100%;
     border: none;
@@ -24,14 +26,21 @@
     flex: 1;
     outline: none;
 }
+
 @media (prefers-color-scheme: dark) {
+    .formZone {
+        border-color: rgb(47, 51, 54);
+    }
+
     .form {
         background: rgb(32, 35, 39);
     }
+
     .form textarea {
         color: white;
     }
 }
+
 .submitButton {
     cursor: pointer;
     border: none;
@@ -42,10 +51,12 @@
     height: 34px;
     background: transparent;
 }
+
 .submitButton:disabled {
     opacity: 0.5;
     cursor: default;
 }
+
 .submitButton svg {
     fill: rgb(29, 155, 240);
 }
