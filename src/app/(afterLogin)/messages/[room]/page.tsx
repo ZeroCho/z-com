@@ -7,7 +7,6 @@ import {getUserServer} from "@/app/(afterLogin)/[username]/_lib/getUserServer";
 import {auth} from "@/auth";
 import {QueryClient} from "@tanstack/react-query";
 import {UserInfo} from "@/app/(afterLogin)/messages/[room]/_component/UserInfo";
-import WebSocketComponent from "@/app/(afterLogin)/messages/[room]/_component/WebSocketComponent";
 import React from "react";
 import MessageList from "@/app/(afterLogin)/messages/[room]/_component/MessageList";
 
@@ -33,7 +32,6 @@ export default async function ChatRoom({ params }: Props) {
 
   return (
     <main className={style.main}>
-      <WebSocketComponent />
       <UserInfo id={ids[0]} />
       <MessageList id={ids[0]} />
       <MessageForm id={ids[0]} />

@@ -1,13 +1,14 @@
 import {cookies} from "next/headers";
 import {Room} from "@/model/Room";
 
-export async function getRooms({queryKey}: { queryKey: [string, string] }) {
+export async function getRoomsServer({queryKey}: { queryKey: [string, string] }) {
   const [_, id] = queryKey;
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/users/${id}/rooms`, {
     next: {
       tags: ['rooms', id],
     },
     credentials: 'include',
+    headers: {Cookie: cookies().toString()},
     cache: 'no-store',
   });
   // The return value is *not* serialized
