@@ -57,11 +57,6 @@
 .closeButton:hover {
     background-color: rgba(15,20,25, 0.1);
 }
-@media all and (min-width: 687px) {
-    .closeButton {
-        left: 8px;
-    }
-}
 @media (prefers-color-scheme: dark) {
     .closeButton {
         background-color: black;
@@ -73,7 +68,14 @@
 .modalForm {
     display: flex;
     flex-direction: column;
-    flex: 1;
+}
+@media all and (min-width: 687px) {
+    .closeButton {
+        left: 8px;
+    }
+    .modalForm {
+        flex: 1;
+    }
 }
 
 .modalOriginal {
