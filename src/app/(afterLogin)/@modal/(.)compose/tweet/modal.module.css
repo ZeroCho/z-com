@@ -20,15 +20,27 @@
 .modal {
     background: rgb(var(--background-end-rgb));;
     position: relative;
-    top: 5%;
-    max-width: 80vw;
-    min-width: 600px;
-    max-height: 400px;
+    width: 100%;
     border-radius: 16px;
     display: flex;
     flex-direction: column;
+    padding: 32px;
 }
-
+@media all and (min-width: 687px) {
+    .modal {
+        top: 5%;
+        min-width: 600px;
+        max-width: 80vw;
+        height: 550px;
+        padding: 0;
+    }
+    .modalHeader {
+        padding: 36px 80px 20px;
+    }
+    .modalBody {
+        padding: 0 80px;
+    }
+}
 .closeButton {
     width: 34px;
     height: 34px;
@@ -37,7 +49,6 @@
     cursor: pointer;
     background-color: #fff;
     position: absolute;
-    left: 8px;
     top: 8px;
     display: flex;
     align-items: center;
@@ -45,6 +56,11 @@
 }
 .closeButton:hover {
     background-color: rgba(15,20,25, 0.1);
+}
+@media all and (min-width: 687px) {
+    .closeButton {
+        left: 8px;
+    }
 }
 @media (prefers-color-scheme: dark) {
     .closeButton {

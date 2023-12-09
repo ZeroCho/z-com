@@ -113,9 +113,16 @@
 }
 .rightSectionInner {
     height: 100%;
-    width: 600px;
     display: flex;
     justify-content: space-between;
+}
+@media all and (min-width: 687px) {
+    .main {
+        width: 600px;
+    }
+    .rightSectionInner {
+        width: 600px;
+    }
 }
 @media all and (min-width: 1024px) {
     .rightSection {
@@ -129,10 +136,8 @@
 }
 
 .main {
-    width: 600px;
     height: 100dvh;
 }
-
 .followRecommend {
     font-size: 20px;
     font-weight: bold;
