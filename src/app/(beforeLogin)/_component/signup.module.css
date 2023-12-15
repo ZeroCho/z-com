@@ -26,11 +26,16 @@
     flex-direction: column;
     padding: 32px;
 }
+.modalHeader {
+    padding: 36px 0 20px;
+    font-size: 31px;
+    font-weight: bold;
+}
 @media all and (min-width: 687px) {
     .modal {
         top: 5%;
         min-width: 600px;
-        max-width: 80vw;
+        max-width: 600px;
         height: 550px;
         padding: 0;
     }
@@ -40,11 +45,6 @@
     .modalBody {
         padding: 0 80px;
     }
-}
-.modalHeader {
-    padding: 36px 0 20px;
-    font-size: 31px;
-    font-weight: bold;
 }
 
 .modal form {
