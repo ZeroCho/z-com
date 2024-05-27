@@ -1,3 +1,8 @@
+[강의 소스코드는 여기에](https://github.com/zerocho/next-app-router-z)
+
+[z.com](https://z.nodebird.com) 소스 코드입니다.
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

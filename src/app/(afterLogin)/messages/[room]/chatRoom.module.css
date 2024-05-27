@@ -1,5 +1,4 @@
 .main {
-    width: 600px;
     height: 100dvh;
     border-color: rgb(239, 243, 244);
     border-right-width: 1px;
@@ -10,7 +9,11 @@
     flex-direction: column;
     align-items: stretch;
 }
-
+@media all and (min-width: 687px) {
+    .main {
+        width: 600px;
+    }
+}
 .header {
     height: 54px;
     display: flex;
