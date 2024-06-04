@@ -12,10 +12,22 @@ export const {
     signIn: '/i/flow/login',
     newUser: '/i/flow/signup',
   },
+  events: {
+    signOut(data) {
+      console.log('auth.ts events signout', 'session' in data && data.session, 'token' in data && data.token);
+      fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/logout`, {
+        method: "POST",
+        credentials: 'include'
+      })
+    },
+    session(data) {
+      console.log('auth.ts events session', 'session' in data && data.session, 'token' in data && data.token);
+    }
+  },
   providers: [
     CredentialsProvider({
       async authorize(credentials) {
-        const authResponse = await fetch(`${process.env.AUTH_URL}/api/login`, {
+        const authResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/login`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
